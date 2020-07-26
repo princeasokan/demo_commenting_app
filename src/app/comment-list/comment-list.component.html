@@ -1,0 +1,21 @@
+<div>
+    
+    <div class="replies" *ngFor="let item of (replies||[])">
+        <div class="c-user"><img src="../../assets/user.svg" class="img-user">{{item.commentList.user}}
+        
+        </div>
+        <div class="c-message">{{item.commentList.message}}</div>
+        <div class="box-action">
+            <a class="c-action" href="#">Comments</a>
+            <a class="c-action" href="#"(click)="setReplyTo(item.commentList.commentId)">Reply</a>
+        </div>       
+        <div style="margin-bottom:5px" *ngIf="(item.commentList.commentId==replyTo)">
+            <app-post-message (addedPost)="receivePostStatus($event)" [comment]="item" [messageType]="'reply'" [user]="user"></app-post-message>
+        </div>
+        
+            
+    
+        
+
+    </div>
+</div>

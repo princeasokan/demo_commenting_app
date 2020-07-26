@@ -1,0 +1,30 @@
+<div class="post">
+    <div class="comment-box">
+        <input class="comment-input" type="text" name="comments" [(ngModel)]="message">
+        <button class="btn-post" type="button" (click)="postComment()">Post</button>
+    </div>
+    
+
+</div>
+<div class="comments">
+
+    <div class="c-box" *ngFor="let item of commentList">
+        <div class="c-user"><img src="../../assets/user.svg" class="img-user">{{item.user}}</div>
+        <div class="c-message">{{item.message}}</div>
+        <div class="box-action">
+            <a class="c-action" href="#" (click)="getComments(item.commentId)">Comments</a>
+            <a class="c-action" href="#"(click)="setReplyTo(item.commentId)">Reply</a>
+        </div>
+        
+        <div *ngIf="(replyTo==item.commentId)">
+            <app-post-message [comment]="item" [messageType]="'reply'" [user]="user"></app-post-message>
+            
+        </div>
+        <div class="comments-below" *ngIf="(enableCommentView==item.commentId)">
+            
+            <app-comment-list [rowData]="replyList"></app-comment-list>
+        </div>
+
+    </div>
+
+</div>

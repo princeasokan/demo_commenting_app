@@ -1,0 +1,35 @@
+.replies{
+    margin-left:20px;
+    position: relative;
+    background-color: gainsboro;
+    padding-left:5px;
+    height: auto;
+}
+.c-message {
+    min-height: 50px;
+    height:  auto;
+    background-color: gainsboro;
+    margin-left: 5px;
+    margin-right: 5px;
+    
+}
+.c-action {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    background-color: #557ab5;
+    
+
+}
+
+.c-action:hover {
+    background-color: peru;
+}
+.img-user{
+    width: 30px;
+    height: 30px;
+}
